@@ -1,0 +1,76 @@
+Article:
+  art2:
+    article_id: 2
+    title: PhpDoctor in NetBeans
+    abstract: |
+      When working with NetBeans when developing web applications you may need a
+      documetation generating tool which allows you to generate fast your applications
+      documentation. PhpDoctor is an useful tool for simple generation of java-like
+      looking documentation. There a simple way to integrate those two tools.
+    content: |
+      <h3>Why should I document my code?</h3>
+      <p>
+        Documenting code is an important part of application development. It
+        clarifies the code you're writing, especially when your working in a team.
+        Not only the code should be readable by others. Documentations helps to
+        understand a piece of code that you don't won't to read entirely,
+        because it might be to long. There are also some <b>good practices</b> that
+        you should know before writing documentation. Here are some
+        <a href="http://en.wikipedia.org/wiki/Good_Documentation_Practice">good practices</a>
+        for writing it.
+      </p>
+      <h3>Time to integrate - Download and install PhpDoctor</h3>
+      <p>
+        Open your bowser and download PhpDoctor from
+        <a href="http://peej.github.com/phpdoctor/#download">this site</a>
+        Now extract downloaded file to your <b>project directory</b> and rename the folder to <b>doc</b>
+      </p>
+      <h3>Create documentation trough NetBeans IDE</h3>
+      <p>
+        Run NetBeans and right click on project icon in <b>Projects</b> window to
+        <b>Set Configuration &gt; Customize...</b>
+      </p>
+      <p>
+        <img src="/images/assets/a002/p1.png" alt="symfony customization" />
+      </p>
+      <p>Add a new cofiguration named <b>create_doc</b></p>
+      <p>Select <b>Run As</b> <b>Script</b></p>
+      <p>
+        Select Index File by clicking <b>Browse...</b> and open <b>phpdoc.php</b>
+        that you will find in the previous renamed folder - <b>doc</b> (located in your project directory)
+      </p>
+      <p>
+        In the argument filed write your configuration file (contains settings for PhpDoctor)
+        name, for example <b>default.ini</b> (this configuration will create documentation
+        of PhpDoctor itself)
+      </p>
+      <p>
+        <img src="/images/assets/a002/p2.png" alt="project configuration" />
+      </p>
+      <p class="warning">
+        <b>Note!!</b><br/>
+        You should create your own configuration file. Copy <b>default.ini</b>
+        and rename it. Change value of <b>source_path</b> parameter to tell PhpDoctor where to look
+        for php file that will be documented. Change value of <b>d</b> parameter to tell PhpDoctor
+        in what directory the documentation should be created. Read about
+        <a href="http://peej.github.com/phpdoctor/more.html#configuration">configuration directives</a></p>
+      </p>
+      <p>Set project configuration to <b>create_doc</b> and <b>run main project</b> to create documentation</p>
+      <p>
+        <img src="/images/assets/a002/p3.png" alt="run" />
+      </p>
+#    dynjs: ''
+#    dyncss: ''
+    author_id: 1
+    published: '2011-03-22 12:00:00'
+
+CategoryArticle:
+  ca_2_5:
+    article_id: 2
+    category_id: 5
+  ca_2_3:
+    article_id: 2
+    category_id: 3
+  ca_2_4:
+    article_id: 2
+    category_id: 4

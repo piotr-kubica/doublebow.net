@@ -1,0 +1,25 @@
+<script type="text/javascript">
+	setInterval("calculateCountdown()", 500);
+	
+	function calculateCountdown() {
+		var today  = new Date();
+		var todayTime  = today.getTime();
+		var target = new Date("28 July, 2012 19:00:00");
+		var targetTime = target.getTime();
+
+		var diff = targetTime - todayTime;
+		var sec = Math.floor(diff / 1000);
+		var min = Math.floor(diff / 60000);
+		var h = Math.floor(diff / 3600000);
+		var days = Math.floor(diff / 86400000);
+
+		var hoursLeft = h - days * 24;
+		var minsLeft = min - h * 60;
+		var secsLeft = sec - min * 60;
+
+		document.getElementById("ct_sec").innerHTML = "" + secsLeft;
+		document.getElementById("ct_min").innerHTML = "" + minsLeft;
+		document.getElementById("ct_h").innerHTML = "" + hoursLeft;
+		document.getElementById("ct_days").innerHTML = "" + days;
+	}
+</script>

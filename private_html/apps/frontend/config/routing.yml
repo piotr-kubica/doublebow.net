@@ -1,0 +1,94 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# routing rules
+
+homepage:
+  url:   /
+  param: { module: articles, action: latest }
+
+rss:
+  url:  /rss
+  param: { module: rss, action: index }
+
+defalut-articles:
+  url:   /articles
+  param: { module: articles, action: latest }
+
+defalut-articles-empty:
+  url:   /articles/
+  param: { module: articles, action: latest }
+
+latest-articles:
+  url:  /articles/latest
+  param: { module: articles, action: latest }
+
+latest-articles-page:
+  url:  /articles/latest/:nr
+  param: { module: articles, action: latest, nr: 1 }
+  requirements:
+    nr: \d*
+
+most-commented-articles:
+  url:  /articles/most-commented
+  param: { module: articles, action: mostcommented }
+
+most-commented-articles-page:
+  url:  /articles/most-commented/:nr
+  param: { module: articles, action: mostcommented, nr: 1 }
+  requirements:
+    nr: \d*
+
+search-articles:
+  url:  /articles/search/:keywords
+  param: { module: articles, action: search }
+
+search-articles-page:
+  url:  /articles/search/:keywords/:nr
+  param: { module: articles, action: search, nr: 1 }
+  requirements:
+    nr: \d*
+
+archive-articles:
+  url:  /articles/:year/:month
+  param: { module: articles, action: archive }
+  requirements:
+    year: \d+
+
+archive-articles-page:
+  url:  /articles/:year/:month/:nr
+  param: { module: articles, action: archive, nr: 1 }
+  requirements:
+    year: \d+
+    nr:   \d*
+
+category-articles:
+  url:  /articles/:cslug
+  param: { module: articles, action: category }
+
+category-articles-page:
+  url:  /articles/:cslug/:nr
+  param: { module: articles, action: category, nr: 1 }
+  requirements:
+    nr: \d*
+
+article:
+  url:  /articles/:cslug/:aslug
+  param: { module: articles, action: article }
+
+portfolio:
+  url:  /portfolio
+  param: { module: portfolio, action: index }
+
+about:
+  url:  /about
+  param: { module: about, action: index }
+
+categories:
+  url:  /categories
+  param: { module: categories, action: index }
+
+# XXX remove in prod
+404:
+  url:  /404
+  param: { module: errors, action: error404 }

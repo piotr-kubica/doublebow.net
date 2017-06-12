@@ -1,0 +1,15 @@
+@font-face {
+	font-family: 'StymieLtBTBold';
+	src: url('stymiebd-webfont.eot');
+	src: local('☺'), url('stymiebd-webfont.woff') format('woff'), url('stymiebd-webfont.ttf') format('truetype'), url('stymiebd-webfont.svg#webfonteW5q07wH') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'HarabaraHandItalic';
+	src: url('harabarahand-webfont.eot');
+	src: local('☺'), url('harabarahand-webfont.woff') format('woff'), url('harabarahand-webfont.ttf') format('truetype'), url('harabarahand-webfont.svg#webfontLpeKmK9r') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

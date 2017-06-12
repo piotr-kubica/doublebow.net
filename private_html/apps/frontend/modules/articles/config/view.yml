@@ -1,0 +1,3 @@
+articleSuccess:
+  javascripts:    [xregexp-min.js, shCore.js, highlighter.js]
+  stylesheets:    [shCoreDefault.css]

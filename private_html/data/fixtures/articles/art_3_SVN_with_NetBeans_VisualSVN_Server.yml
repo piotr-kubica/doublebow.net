@@ -1,0 +1,129 @@
+Article:
+  art3:
+    article_id: 3
+    title: SVN with NetBeans. VisualSVN Server.
+    abstract: |
+      <a href="http://en.wikipedia.org/wiki/Apache_Subversion">Subversion (SVN)</a>
+      is a popular version controll system and the successor of CVS. SVN is being used
+      to maintain different versions of files, eg. source code, documentation etc.
+      They alow you to revert changes and safely add some new. Without
+      revision controll systems working on a project in team would be difficult.
+    content: |
+      <h3>VisualSVN server</h3>
+      <p>
+        A repository that's not shared doesn't make sense. ViusalSVN server
+        allows you to create repositories that are accessible to other
+        developers on the network.
+      </p>
+
+      <h4>VisuallSVN server installation</h4>
+      <ol>
+        <li>
+          Open your web browser and go to <a href="http://www.visualsvn.com/server/download/">
+          VisualSVN Server website</a>
+        </li>
+        <li>
+          Run setup file. In <b>Select Components</b> installation step choose
+          <b>VisualSVN Server and Management Console</b>
+        </li>
+        <li>
+          Choose VisualSVN Server installation directory and <b>Repositories </b>directory
+        </li>
+        <li>
+          Leave <b>Use secure connection</b> selected
+        </li>
+        <li>
+          Choose Authentication: <b>Use Subversion authentication</b>
+          (Read about <a href="http://www.visualsvn.com/support/topic/00039/">authentication options</a>)
+        </li>
+        <li>
+          Continue installation. Click Finish to complete installation and
+          Run VisualSVN Server
+        </li>
+      </ol>
+
+      <h4>Creating user</h4>
+      <ol>
+        <li>
+          Click <b>Create new user...</b>
+        </li>
+        <li>
+          Type in username and password (keep credentials in mind)
+        </li>
+      <ol>
+
+      <h4>Creating repository</h4>
+      <ol>
+        <li>
+          Click <b>Create new user...</b>
+        </li>
+        <li>
+          Click <b>Create new repository...</b>
+        </li>
+        <li>
+          Enter name for the new repository and check <b>Create default structure</b> option
+        </li>
+        <li>
+          Clik OK. Your repository is created
+        </li>
+      <ol>
+
+      <h4>Assigning user to repository</h4>
+      <ol>
+        <li>
+          Right click on repository and choose<b> Properties...</b>
+        </li>
+        <li>
+          Click <b>Add... </b>and select a user you want grant access to repository
+        </li>
+        <li>
+          Choose appropriate user permissions. Click OK.
+          <img src="/images/assets/a003/p1.png" alt="ver_contrl" />
+        </li>
+      </ol>
+
+      <h4>SVN &amp; NetBeans</h4>
+      <ol>
+        <li>
+          Open NetBeans. Then open context menu by right-click on project icon.
+          Go to <b>Versioning &gt; Import</b> into Subverison repository
+        </li>
+        <li>
+          Now you have to install your SVN client application. NetBeans will do this automatically.
+          <img src="/images/assets/a003/p2.png" alt="svn0" />
+        </li>
+        <li>
+          Confirm the licence terms by clicking OK.
+          <img src="/images/assets/a003/p3.png" alt="svn1" />
+        </li>
+        <li>
+          After installation an information window will appear. Click <b>Restart</b>.
+        </li>
+        <li>
+          Go to <b>Versioning</b> &gt; <b>Import</b>, if an <b>Import</b> window doesn't appear after restart.
+        </li>
+        <li>
+          Enter <b>repository URL</b>, <b>user name</b> and<b> user password</b>. Click Next.
+          <img src="/images/assets/a003/p4.png" alt="svn2" />
+        </li>
+        <li>
+          <b>Select trunk</b> (read about SVN structure) folder and enter a message text. Click Next.
+          <img src="/images/assets/a003/p5.png" alt="svn3" />
+        </li>
+        <li>
+          Select files you want to add to your repository (all selected by default) and click Finish.
+          <img src="/images/assets/a003/p6.png" alt="svn4" />
+        </li>
+      </ol>
+      <p>
+        Your repository should be up to date. Now you can start working! :)
+      </p>
+#    dynjs: ''
+#    dyncss: ''
+    author_id: 1
+    published: '2011-03-24 12:00:00'
+
+CategoryArticle:
+  ca_3_3:
+    article_id: 3
+    category_id: 3

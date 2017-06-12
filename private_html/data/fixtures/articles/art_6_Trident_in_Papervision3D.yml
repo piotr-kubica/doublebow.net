@@ -1,0 +1,223 @@
+Article:
+  art:
+    article_id: 6
+    title: Trident in Papervision3D
+    abstract: |
+      Thanks to web 3D graphics engines Flash has undergone a transformation in
+      the last few years from a 2D to a 3D development platform for
+      <a href="http://en.wikipedia.org/wiki/Rich_Internet_application">rich internet
+      applications</a>. When you're developing a RIA there often is a need for
+      for visualizing the cooridante system so you can see the postion of the objects
+      you place on the scene. In the popular engine Away3D you can use the
+      <a href="http://away3d.com/livedocs/3.6.0_lib/away3d/primitives/Trident.html">Trident</a>
+      class. In another 3D engine, Papervision3D, well, there isn't such thing.
+      You have to create it yourself. In this tutorial you will learn how to do it.
+    content: |
+      <h3>Trident. The conception.</h3>
+      <p>
+        A trident like in Away3D consists of 3 arrows, each pointing parallel to the direction
+        of an axis. The <b>(0, 0, 0)</b> point in the coordinate system is the shared point of the arrays.
+      </p>
+      <p>
+        <img src="/images/assets/a006/p1.jpg" alt="Trident in Away3D" />
+      </p>
+      <p>
+        A single arrow consists of the <b>shaft</b> and the <b>arrowhead</b>
+      </p>
+      <p>
+        <img src="/images/assets/a006/p2.jpg" alt="shaft and arrowhead separatelly" />
+      </p>
+
+      <h3>Drawing a line</h3>
+      <p>
+        Arrows can be created by drawing lines. You can accomplish this by
+        using classes <i>Line<u>s</u>3D</i> and <i>Line3D</i>. To draw a line crate
+        an instance of <i>Lines3D</i> that is a container for <i>Line3D</i> instances.
+        Then, create a <i>LineMaterial</i> that allows you to choose a color
+        for your line.
+        Create 2 <i>Vertex3D</i> objects that will define points between which the
+        line will be drawn.
+        Finally, create an instance of <i>Line3D</i> and
+        pass the previously created <i>Lines3D</i>, <i>Vertex3D</i> and <i>LineMaterial</i>
+        objects as parameters. You can additionally specify the line thickness by
+        given by parameter <i>size</i>.
+      </p>
+      <div class="code_snippet"><pre class="brush: actionscript3; gutter: false;">
+        var lc:Lines3D = new Lines3D();
+        var v0:Vertex3D = new Vertex3D(0, 0, 0);
+        var v1:Vertex3D = new Vertex3D(100, 0, 0);
+        var mat:LineMaterial = new LineMaterial(0x00ff00); // color of line: green
+        var line:Line3D = new Line3D(lc, mat, 2, v0, v1);
+      </pre></div>
+      <p>
+        Don't forget to add the <i>Line3D</i> object to the <i>Lines3D</i> container
+        and to add the <i>Lines3D</i> instance to the scene so it can be displayed.
+      </p>
+      <div class="code_snippet"><pre class="brush: actionscript3; gutter: false;">
+        lc.addLine(line);
+        scene.addChild(lc);
+      </pre></div>
+      <p>
+        Now, that you can draw a line, you will create the <i>Trident3D</i> class
+        by drawing some arrows.
+      </p>
+
+      <h3>Class Trident3D</h3>
+      <p>
+        Create a new class called <i>Trident3D</i>. This class must extend the
+        <i>DisplayObject3D</i> class so it can be rendered by the 3D graphics engine.
+      </p>
+      <div class="code_snippet"><pre class="brush: actionscript3; first-line: 14;">
+        public final class Trident3D extends DisplayObject3D {}
+      </pre></div>
+
+      <h4>Attributes</h4>
+      <p>
+        First of all, there will be 3 arrows, so you need 3 containers.
+        Therefore create refenrences to <i>Lines3D</i> instance variables.
+      </p>
+      <div class="code_snippet"><pre class="brush: actionscript3; first-line: 16;">
+        private var arrX:Lines3D;
+        private var arrY:Lines3D;
+        private var arrZ:Lines3D;
+      </pre></div>
+      <p>
+        Now, you have to specify the size of trident (the same size will be the arrow shafts).
+        All arrows will be the same same lenght, so you need only one variable of type <i>Number</i>.
+        You can call it <i>tSize</i>.
+        You will also need to store the line thickness that the arrows will be drawn
+        with, so add the <i>thickness</i>.
+      </p>
+      <div class="code_snippet"><pre class="brush: actionscript3; first-line: 20;">
+        private var thickness:Number;
+        private var tSize:Number;
+      </pre></div>
+      <p>
+        There is one thing you have to know before drawing the arrow. What size
+        will be the arrowhead?
+        To keep proportions, in case of sizing the <i>Trident3D</i> assume
+        that the head is 1/10th of the lenght of shaft.
+        Store this proportion in <i>SHAFT_RATIO</i> variable and the actual
+        width and height of arrowhead accordingly in <i>ahWidth</i> and <i>ahHeight</i>.
+      </p>
+      <div class="code_snippet"><pre class="brush: actionscript3; first-line: 23;">
+        private static var SHAFT_RATIO:int = 10;
+        private var ahWidth:Number;
+        private var ahHeight:Number;
+      </pre></div>
+
+      <h4>Drawing an arrow</h4>
+      <p>
+        To draw an arrow, in this case means to draw a shaft of the lenght of
+        <i>tSize</i> and arrowhead of width <i>ahWidth</i> and height <i>ahHeight</i>.
+        Drawing a shaft shoult be a piece of cake.
+      </p>
+      <div class="code_snippet"><pre class="brush: actionscript3; gutter: false;">
+        var arr:Lines3D = new Lines3D();
+
+        // x-axis arrow shaft
+        var v0:Vertex3D = new Vertex3D();
+        var vx:Vertex3D = new Vertex3D(tSize, 0, 0);
+        var xShaft:Line3D = new Line3D(arr, material, thickness, v0, vx);
+        arr.addLine(xShaft);
+      </pre></div>
+      <p>
+        To create a arrowhead for the "x-arrow" you need 5 points.
+        The first point is the end of the arrow. The rest of the points will lay on the YZ-plane in
+        distance of (as you assumed earlier) 1/10th from the end of arrow.
+      </p>
+      <div class="code_snippet"><pre class="brush: actionscript3; gutter: false;">
+        // x-axis arrowhead
+        var xa:Array = new Array(
+          new Vertex3D(tSize - ahHeight, 0,        -ahWidth),
+          new Vertex3D(tSize - ahHeight, -ahWidth, 0),
+          new Vertex3D(tSize - ahHeight, 0,        ahWidth),
+          new Vertex3D(tSize - ahHeight, ahWidth,  0)
+        );
+      </pre></div>
+      <p>
+        Each of these 4 points will be connected with the end of the arrow by lines.
+      </p>
+      <div class="code_snippet"><pre class="brush: actionscript3; gutter: false;">
+        for(var i:int = 0; i < xa.length; i++) {
+          arr.addLine(new Line3D(arr, material, thickness, xa[i], vx));
+        }
+      </pre></div>
+      <p>
+        Also, each of the 4 points will be connected with the next clockwise or counterclockwise
+        (when observing them if the end of arrow is pointing towards you) point.
+      </p>
+      <div class="code_snippet"><pre class="brush: actionscript3; gutter: false;">
+        for(var i:int = 0; i < xa.length; i++) {
+          arr.addLine(new Line3D(arr, material, thickness, xa[i], xa[(i + 1) % xa.length]));
+        }
+      </pre></div>
+
+      <h4>Refactoring</h4>
+      <p>
+        You should now refactor your code to make it more reusable.
+        Therefore create a method that will draw the arrowhead.
+      </p>
+      <div class="code_snippet"><pre class="brush: actionscript3; first-line: 113;">
+        private function drawArrowHead(arr:Lines3D, arrowPointingVertex:Vertex3D,
+                        arrowHeadVertices:Array, material:LineMaterial): void {
+
+          for(var i:int = 0; i < arrowHeadVertices.length; i++) {
+            arr.addLine(new Line3D(arr, material, thickness, arrowHeadVertices[i],
+                         arrowHeadVertices[(i + 1) % arrowHeadVertices.length]));
+          }
+
+          for(var i:int = 0; i < arrowHeadVertices.length; i++) {
+            arr.addLine(new Line3D(arr, material, thickness, arrowHeadVertices[i], arrowPointingVertex));
+          }
+        }
+      </pre></div>
+      <p>
+        It's also a good idea to create functions that will draw arrow. On base of
+        the function below that draws the "x-arrow" create yourself functions that draw the
+        remaining arrows.
+      </p>
+      <div class="code_snippet"><pre class="brush: actionscript3; first-line: 92;">
+        private function drawArrowX(material:LineMaterial): Lines3D {
+          var arr:Lines3D = new Lines3D();
+
+          // x-axis arrow shaft
+          var v0:Vertex3D = new Vertex3D();
+          var vx:Vertex3D = new Vertex3D(tSize, 0, 0);
+          var xShaft:Line3D = new Line3D(arr, material, thickness, v0, vx);
+          arr.addLine(xShaft);
+
+          // x-axis arrowhead
+          var xa:Array = new Array(
+            new Vertex3D(tSize - ahHeight, 0,        -ahWidth),
+            new Vertex3D(tSize - ahHeight, -ahWidth, 0),
+            new Vertex3D(tSize - ahHeight, 0,        ahWidth),
+            new Vertex3D(tSize - ahHeight, ahWidth,  0)
+          );
+
+          drawArrowHead(arr, vx, xa, material);
+          return arr;
+        }
+      </pre></div>
+      <p>
+        <iframe src="/uploads/assets/a006/demo/loader.html" width="100%" height="340">
+          <p>Your browser does not support iframes.</p>
+        </iframe>
+      </p>
+      <p>
+        <a href="/uploads/assets/a006/Trident3D.as">Click here</a> to download the <i>Trident3D</i> class. <br/>
+        <a href="/uploads/assets/a006/trident_3d_demo.zip">Click here</a> to download a demo of the <i>Trident3D</i> class. <br/>
+      </p>
+    dynjs: '/js/shBrushAS3'
+#    dyncss: ''
+    author_id: 1
+    published: '2011-04-22 12:00:00'
+
+CategoryArticle:
+  ca_6_6:
+    article_id: 6
+    category_id: 6
+
+  ca_6_7:
+    article_id: 6
+    category_id: 7

@@ -1,0 +1,11 @@
+CREATE TABLE article_index (keyword VARCHAR(200), field VARCHAR(50), position BIGINT, article_id BIGINT, PRIMARY KEY(keyword, field, position, article_id)) ENGINE = INNODB;
+CREATE TABLE article (article_id BIGINT AUTO_INCREMENT, title VARCHAR(255) NOT NULL UNIQUE, abstract TEXT, content LONGBLOB, author_id BIGINT NOT NULL, published DATETIME, dynjs TEXT, dyncss TEXT, article_slug VARCHAR(255), created DATETIME NOT NULL, updated_at DATETIME NOT NULL, UNIQUE INDEX article_sluggable_idx (article_slug), INDEX author_id_idx (author_id), PRIMARY KEY(article_id)) ENGINE = INNODB;
+CREATE TABLE author (author_id BIGINT AUTO_INCREMENT, name VARCHAR(100) NOT NULL UNIQUE, description TEXT, PRIMARY KEY(author_id)) ENGINE = INNODB;
+CREATE TABLE category (category_id BIGINT AUTO_INCREMENT, name VARCHAR(100) NOT NULL UNIQUE, description TEXT, category_slug VARCHAR(255), UNIQUE INDEX category_sluggable_idx (category_slug), PRIMARY KEY(category_id)) ENGINE = INNODB;
+CREATE TABLE category_article (category_id BIGINT, article_id BIGINT, PRIMARY KEY(category_id, article_id)) ENGINE = INNODB;
+CREATE TABLE comment (comment_id BIGINT AUTO_INCREMENT, author VARCHAR(30) NOT NULL, date DATETIME NOT NULL, content TEXT, web VARCHAR(255), mail VARCHAR(255), article_id BIGINT NOT NULL, updated_at DATETIME NOT NULL, INDEX article_id_idx (article_id), PRIMARY KEY(comment_id)) ENGINE = INNODB;
+ALTER TABLE article_index ADD CONSTRAINT article_index_article_id_article_article_id FOREIGN KEY (article_id) REFERENCES article(article_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE article ADD CONSTRAINT article_author_id_author_author_id FOREIGN KEY (author_id) REFERENCES author(author_id);
+ALTER TABLE category_article ADD CONSTRAINT category_article_category_id_category_category_id FOREIGN KEY (category_id) REFERENCES category(category_id) ON DELETE CASCADE;
+ALTER TABLE category_article ADD CONSTRAINT category_article_article_id_article_article_id FOREIGN KEY (article_id) REFERENCES article(article_id) ON DELETE CASCADE;
+ALTER TABLE comment ADD CONSTRAINT comment_article_id_article_article_id FOREIGN KEY (article_id) REFERENCES article(article_id) ON DELETE CASCADE;

@@ -1,0 +1,1080 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - TableRowSelector</title>
+
+		<style type="text/css">
+			/* default.css */
+body
+{
+	font: 12px "Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
+	width: 800px;
+}
+
+.header
+{
+	clear: both;
+	background-color: #ccc;
+	padding: 8px;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+hr
+{
+	border: none 0;
+	border-top: 1px solid #7F8FB1;
+	height: 1px;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+}
+
+#index
+{
+	margin-top: 24px;
+	float: left;
+	width: 160px;
+	position: absolute;
+	left: 8px;
+	background-color: #F3F3F3;
+	padding: 8px;
+}
+
+#content
+{
+	margin-left: 190px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #7F8FB1;
+	color: #fff;
+	font-size:130%;
+	text-align: left;
+	padding: 2px 6px 2px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	width: 140px;
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription, .description
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailList dt { margin-left: 20px; }
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #777;
+	font-style: italic;
+}
+
+.fineprint
+{
+	text-align: right;
+	font-size: 10px;
+}
+		</style>
+	</head>
+
+	<body>
+<!-- ============================== header ================================= -->	
+		<!-- begin static/header.html -->
+		<div id="header">
+</div>
+		<!-- end static/header.html -->
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<div align="center"><a href="../index.html">Class Index</a>
+| <a href="../files.html">File Index</a></div>
+<hr />
+<h2>Classes</h2>
+<ul class="classList">
+
+	<li><a href="../symbols/TableRowSelector.html">TableRowSelector</a></li>
+	
+</ul>
+<hr />
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+<!-- ============================== class title ============================ -->
+			<h1 class="classTitle">
+				
+				Class TableRowSelector
+			</h1>
+
+<!-- ============================== class summary ========================== -->			
+			<p class="description">
+				<br />Version
+					1.0
+TableRowSelector allows selecting rows by definig custom selecting event,
+getting data from table or searching for givent index by row/column content. 
+The selectable JQuery elements are restricted to HTML row tag tr
+and are checked after passing to the TableRowSelector constructor.<br />
+				
+				
+			
+				TableRowSelector
+				
+				
+					<br /><i>Defined in: </i> <a href="../symbols/src/jsin__TableRowSelector.js.html">TableRowSelector.js</a>.
+				
+			</p>
+
+<!-- ============================== constructor summary ==================== -->			
+			
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class TableRowSelector.">
+				<caption>Class Summary</caption>
+				<thead>
+					<tr>
+						<th scope="col">Constructor Attributes</th>
+						<th scope="col">Constructor Name and Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="attributes">&nbsp;</td>
+						<td class="nameDescription" >
+							<div class="fixedFont">
+								<b><a href="../symbols/TableRowSelector.html#constructor">TableRowSelector</a></b>(selectableObjects, eventName, selFun, deselFun, triggerOnCreate)
+							</div>
+							<div class="description"></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class TableRowSelector.">
+					<caption>Method Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Method Attributes</th>
+							<th scope="col">Method Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/TableRowSelector.html#bindSelectEvent">bindSelectEvent</a></b>(eventName, selFun, deselFun)
+								</div>
+								<div class="description">Binds an JQuery event (event types: http://api.jquery.com/bind/) that
+will trigger function selFun with parameters containing new selected
+element and it's index and deselFun with parameters containing previously
+selected element and it's index if givent event is fired up</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/TableRowSelector.html#columnContent">columnContent</a></b>(idx)
+								</div>
+								<div class="description">Returns content of a given column as an array</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/TableRowSelector.html#columnCount">columnCount</a></b>()
+								</div>
+								<div class="description">Returns number of columns</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/TableRowSelector.html#columnIndexByRowContent">columnIndexByRowContent</a></b>(rowIdx, content)
+								</div>
+								<div class="description">Searches each column in given row for given content and returns index of column or
+negative value (-1) if matching content was not found</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/TableRowSelector.html#content">content</a></b>(rowIdx, colIdx)
+								</div>
+								<div class="description">Returns table cell content for given row and column indexes</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/TableRowSelector.html#lastRowIndex">lastRowIndex</a></b>()
+								</div>
+								<div class="description">Returns row index (starting with 0) of the previous selected row
+or -1 if no rows were selected</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/TableRowSelector.html#length">length</a></b>()
+								</div>
+								<div class="description">Returns number of rows</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/TableRowSelector.html#rowContent">rowContent</a></b>(idx)
+								</div>
+								<div class="description">Returns content of a given row as an array</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/TableRowSelector.html#rowIndex">rowIndex</a></b>()
+								</div>
+								<div class="description">Returns current row index (starting with 0) of the selected row
+or -1 if no row is selected</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/TableRowSelector.html#rowIndexByColumnContent">rowIndexByColumnContent</a></b>(columnIdx, content)
+								</div>
+								<div class="description">Searches each row in given column for given content and returns index of row or
+negative value (-1) if matching content was not found</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/TableRowSelector.html#triggerRowSelection">triggerRowSelection</a></b>(idx)
+								</div>
+								<div class="description">Triggers the selection of a given row</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/TableRowSelector.html#unbindSelectEvent">unbindSelectEvent</a></b>(eventName)
+								</div>
+								<div class="description">Unbinds given event from objects.</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
+<!-- ============================== events summary ======================== -->
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+			<div class="details"><a name="constructor"> </a>
+				<div class="sectionTitle">
+					Class Detail
+				</div>
+				
+				<div class="fixedFont">
+						<b>TableRowSelector</b>(selectableObjects, eventName, selFun, deselFun, triggerOnCreate)
+				</div>
+				
+				<div class="description">
+					
+					<br /><i>Author: </i>Piotr Kubica
+http://www.doublebow.net
+June 5, 2011.
+				</div>
+				
+				
+				
+				
+					
+						<dl class="detailList">
+						<dt class="heading">Parameters:</dt>
+						
+							<dt>
+								<span class="light fixedFont">{JQuery}</span>  <b>selectableObjects</b>
+								
+							</dt>
+								<dd>rows that should be selectable</dd>
+						
+							<dt>
+								<span class="light fixedFont">{string}</span>  <b>eventName</b>
+								
+							</dt>
+								<dd>name of JQuery event that will be used for selecting rows</dd>
+						
+							<dt>
+								<span class="light fixedFont">{function(selectedElem|selectedIndex)}</span>  <b>selFun</b>
+								
+							</dt>
+								<dd>function taking 2 parameters used as a callback after selection event is fired. Should implement the 'select' behavior</dd>
+						
+							<dt>
+								<span class="light fixedFont">{function(deselectedElem|deselectedIndex)}</span>  <b>deselFun</b>
+								
+							</dt>
+								<dd>function taking 2 parameters used as a callback after selection event is fired. Should implement the 'deselect' behavior</dd>
+						
+							<dt>
+								 <b>triggerOnCreate</b>
+								
+							</dt>
+								<dd></dd>
+						
+						</dl>
+					
+					
+					
+					
+						<dl class="detailList">
+						<dt class="heading">Throws:</dt>
+						
+							<dt>
+								<span class="light fixedFont">{string}</span>  <b></b>
+							</dt>
+								<dd>thrown if selectableObjects contain tags other than TR or no elements selected</dd>
+						
+						</dl>
+					
+					
+					
+					
+
+			</div>
+			
+
+<!-- ============================== field details ========================== -->		
+			
+
+<!-- ============================== method details ========================= -->		
+			
+				<div class="sectionTitle">
+					Method Detail
+				</div>
+				
+					<a name="bindSelectEvent"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{void}</span>
+					<b>bindSelectEvent</b>(eventName, selFun, deselFun)
+					
+					</div>
+					<div class="description">
+						Binds an JQuery event (event types: http://api.jquery.com/bind/) that
+will trigger function selFun with parameters containing new selected
+element and it's index and deselFun with parameters containing previously
+selected element and it's index if givent event is fired up
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>eventName</b>
+									
+								</dt>
+								<dd>the eventType in JQuery</dd>
+							
+								<dt>
+									<span class="light fixedFont">{function}</span> <b>selFun</b>
+									
+								</dt>
+								<dd>function triggered with parameters containing new selected element and it's index</dd>
+							
+								<dt>
+									<span class="light fixedFont">{function}</span> <b>deselFun</b>
+									
+								</dt>
+								<dd>function triggered with parameters containing previously selected element and it's index</dd>
+							
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Throws:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span>  <b></b>
+								</dt>
+								<dd>thrown if all arguments not specified or valid</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{void}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="columnContent"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{array(string)}</span>
+					<b>columnContent</b>(idx)
+					
+					</div>
+					<div class="description">
+						Returns content of a given column as an array
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{integer}</span> <b>idx</b>
+									
+								</dt>
+								<dd>index of column</dd>
+							
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Throws:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span>  <b></b>
+								</dt>
+								<dd>thrown if idx is invalid or is out of range</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{array(string)}</span> an array containing content of column</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="columnCount"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{integer}</span>
+					<b>columnCount</b>()
+					
+					</div>
+					<div class="description">
+						Returns number of columns
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{integer}</span> column count</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="columnIndexByRowContent"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{integer}</span>
+					<b>columnIndexByRowContent</b>(rowIdx, content)
+					
+					</div>
+					<div class="description">
+						Searches each column in given row for given content and returns index of column or
+negative value (-1) if matching content was not found
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{integer}</span> <b>rowIdx</b>
+									
+								</dt>
+								<dd>index of row which columns are searched for content</dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>content</b>
+									
+								</dt>
+								<dd>the content in row you are looking for</dd>
+							
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Throws:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span>  <b></b>
+								</dt>
+								<dd>thrown if rowIdx if out of range or arguments are not appropriate</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{integer}</span> index of column (starting with 0) or -1 if content in row was not found</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="content"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{string}</span>
+					<b>content</b>(rowIdx, colIdx)
+					
+					</div>
+					<div class="description">
+						Returns table cell content for given row and column indexes
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{integer}</span> <b>rowIdx</b>
+									
+								</dt>
+								<dd>row index of table (starting with 0)</dd>
+							
+								<dt>
+									<span class="light fixedFont">{integer}</span> <b>colIdx</b>
+									
+								</dt>
+								<dd>column index of table (starting with 0)</dd>
+							
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Throws:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span>  <b></b>
+								</dt>
+								<dd>thrown if rowIdx or colIdx is invalid or is out of range</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{string}</span> content of the cell</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="lastRowIndex"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{integer}</span>
+					<b>lastRowIndex</b>()
+					
+					</div>
+					<div class="description">
+						Returns row index (starting with 0) of the previous selected row
+or -1 if no rows were selected
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{integer}</span> last selected row index or -1 if previously not selected</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="length"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{integer}</span>
+					<b>length</b>()
+					
+					</div>
+					<div class="description">
+						Returns number of rows
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{integer}</span> row count</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="rowContent"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{array(string)}</span>
+					<b>rowContent</b>(idx)
+					
+					</div>
+					<div class="description">
+						Returns content of a given row as an array
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{integer}</span> <b>idx</b>
+									
+								</dt>
+								<dd>index of row</dd>
+							
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Throws:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span>  <b></b>
+								</dt>
+								<dd>thrown if idx is invalid or is out of range</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{array(string)}</span> an array containing content of row</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="rowIndex"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{integer}</span>
+					<b>rowIndex</b>()
+					
+					</div>
+					<div class="description">
+						Returns current row index (starting with 0) of the selected row
+or -1 if no row is selected
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{integer}</span> current selected row index or -1 if no rows selected</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="rowIndexByColumnContent"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{integer}</span>
+					<b>rowIndexByColumnContent</b>(columnIdx, content)
+					
+					</div>
+					<div class="description">
+						Searches each row in given column for given content and returns index of row or
+negative value (-1) if matching content was not found
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{integer}</span> <b>columnIdx</b>
+									
+								</dt>
+								<dd>index of column which rows are searched for content</dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>content</b>
+									
+								</dt>
+								<dd>the content in column you are looking for</dd>
+							
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Throws:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span>  <b></b>
+								</dt>
+								<dd>thrown if columnIdx if out of range or arguments are not appropriate</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{integer}</span> index of row (starting with 0) or -1 if content in column was not found</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="triggerRowSelection"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{void}</span>
+					<b>triggerRowSelection</b>(idx)
+					
+					</div>
+					<div class="description">
+						Triggers the selection of a given row
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{integer}</span> <b>idx</b>
+									
+								</dt>
+								<dd>row index</dd>
+							
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Throws:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span>  <b></b>
+								</dt>
+								<dd>thrown if idx is invalid or is out of range</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{void}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="unbindSelectEvent"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{void}</span>
+					<b>unbindSelectEvent</b>(eventName)
+					
+					</div>
+					<div class="description">
+						Unbinds given event from objects. The eventName is a JQuery eventType
+(http://api.jquery.com/bind/)
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>eventName</b>
+									
+								</dt>
+								<dd>event that should be unbound</dd>
+							
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Throws:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span>  <b></b>
+								</dt>
+								<dd>thrown if eventName not specified or valid</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{void}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					
+				
+			
+			
+<!-- ============================== event details ========================= -->		
+			
+			
+			<hr />
+		</div>
+
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Wed Jun 08 2011 10:49:38 GMT+0200 (CEST)
+		</div>
+	</body>
+</html>

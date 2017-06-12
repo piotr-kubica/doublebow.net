@@ -1,0 +1,49 @@
+Category:
+  cat1:
+    category_id: 1
+    name: Java
+    description: |
+      Code snippets, classes and complete solutions in Java. Object-Oriented
+      Programming in Java. Collections, threads, generics, swing.
+
+  cat2:
+    category_id: 2
+    name: JavaScript
+    description: |
+      Scripts in JavaScript. Usage of JavaScript, tips and tricks.
+      Common solutions. Ajax scripts.
+
+  cat3:
+    category_id: 3
+    name: IDE's
+    description: |
+      Working with integrated development environments and software development platforms like
+      NetBeans, Eclipse, VisualStudio, etc.
+
+  cat4:
+    category_id: 4
+    name: Documentation
+    description: |
+      All about writing, generating documentation, usage of documentation
+      tools.
+
+  cat5:
+    category_id: 5
+    name: PHP
+    description: |
+      Object-oriented code snippets in PHP. Database connections, sessions.
+      Arrays, functions, classes. XML and JSON format handling.
+
+  cat6:
+    category_id: 6
+    name: ActionScript 3.0
+    description: |
+      Code snippets, classes and complete solutions in ActionScript 3.0.
+      Programming in Flash. Flash 3D engines. Flash tween and animation tutorials.
+
+  cat7:
+    category_id: 7
+    name: 3D graphics engines
+    description: |
+      Basic scenes in 3D. Primitives, 3D objects,
+      loading objects into scene, animation, special effects.

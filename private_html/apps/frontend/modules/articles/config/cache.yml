@@ -1,0 +1,8 @@
+_footer:
+  enabled: true
+
+_header:
+  enabled: true
+
+_sidebar:
+  enabled: true

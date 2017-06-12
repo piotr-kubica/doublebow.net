@@ -1,0 +1,96 @@
+Article:
+  art5:
+    article_id: 5
+    title: Cartesian Product in Java
+    abstract: |
+      Sometimes you need to do some operations on sets. One of the most common
+      operations you might need is a cartesian product. Simplified, it's a set
+      of all posible ordered pairs whose components belong to sets that you specify
+      in the cartesian product as operands. The programming solution for a cartesian
+      product like <i>A x B</i> is simple. The problem start when you want the cartesian
+      product that looks like this <i>A x B x C x D</i>.
+    content: |
+      <h3>Many sets, one function</h3>
+      <p>
+        So you want for example do get a cartesian product of the following <i>A x B x C</i>.
+        In Java you can store your sets in collections or arrays. The simplest solution
+        would be to write a method that takes two sets and returns a cartesian product.
+        So taking <i>A x B x C</i> you would have to iterate trough the set and
+        execute the method multiple times on the result returned by latest cartesian product
+        and the next set in collection/array.
+      </p>
+      <p>
+        There is a general solution to this as well. Let's assume you we have our
+        sets stored as string arrays.
+      </p>
+      <div class="code_snippet"><pre class="brush: java; first-line: 6;">
+        String[] A = new String[]{ "a1", "a2", "a3" };
+        String[] B = new String[]{ "b1", "b2", "b3" };
+        String[] C = new String[]{ "c1" };
+      </pre></div>
+      <p>
+        This time there are three sets, but we want to pass more sets later.
+        To solve this problem we can use the
+        <a href="http://download.oracle.com/javase/1.5.0/docs/guide/language/varargs.html">varargs</a>.
+      </p>
+      <div class="code_snippet"><pre class="brush: java; gutter: false;">
+        String[] ...s
+      </pre></div>
+      <h3>Recursion</h3>
+      <p>
+        We also want to all the sets give as a result a cartesian product.
+        The solution would be a <a href="http://en.wikipedia.org/wiki/Recursion"_(computer_science)>recursion</a>.
+        Each time we create a new cartesian product we have to store it and pass
+        to the next method call. The product level which stores the information
+        about the second operand in cartesian product operation also needs to be passed.
+      </p>
+      <p>
+        To calculate the cartesian product we use
+        <a href="http://en.wikipedia.org/wiki/Concatenation">concatenation</a>
+        with the overloaded <i>+</i> operator.
+      </p>
+      <p class="warning">
+        NOTE!!<br/>
+        For huge sets concatinating <i>String</i> objects could be unefficient.
+        You can use <i>StringBuilder</i> instead.
+      </p>
+      <p>
+        Eventually, when the final cartesian product is calculated we have to return
+        the result. So what we've finally got is this.
+      </p>
+      <h3>The code</h3>
+      <div class="code_snippet"><pre class="brush: java; first-line: 9;">
+        public static String[] CartesianProduct(int prodLevel, String[] res, String[] ...s) {
+            if(prodLevel < s.length) {
+                int cProdLen = res.length * s[prodLevel].length;
+                String[] tmpRes = new String[cProdLen];
+
+                for (int i = 0; i < res.length; i++) {
+                    for (int j = 0; j < s[prodLevel].length; j++) {
+                        tmpRes[i * s[prodLevel].length + j] = res[i] + s[prodLevel][j];
+                    }
+                }
+                res = Main.CartesianProduct(prodLevel + 1, tmpRes, s);
+            }
+            return res;
+        }
+      </pre></div>
+      <p>
+        You can wrap this method with another, so you dont have to pass each time
+        the first argument as below
+      </p>
+      <div class="code_snippet"><pre class="brush: java; first-line: 26;">
+        String[] product = CartesianProduct(0, A, B, C);
+      </pre></div>
+      <p>
+        <a href="/uploads/assets/a004/cartesian_product_plain.txt">Click here</a> to download the source code.
+      </p>
+    dynjs: '/js/shBrushJava'
+#    dyncss: ''
+    author_id: 1
+    published: '2011-03-27 12:00:00'
+
+CategoryArticle:
+  ca_5_1:
+    article_id: 5
+    category_id: 1

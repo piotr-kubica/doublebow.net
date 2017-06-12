@@ -1,0 +1,21 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        DoubleBow - Web Developer's Blog
+    description:  My personal web blog about programming, web development and IT overall
+    keywords:     doublebow, javascript, actionscript, PHP, HTML, CSS, XML, MySQL, Java, programming, web, developers, development, blog
+    language:     en
+    robots:       index, follow
+    author:       Piotr Kubica
+
+  stylesheets:    [reset.css, fonts.css, grid.css, style.css]
+
+  javascripts:    []
+
+  has_layout:     true
+  layout:         layout

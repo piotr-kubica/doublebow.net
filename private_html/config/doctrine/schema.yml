@@ -1,0 +1,73 @@
+Author:
+  tableName: author
+  columns:
+    author_id:    { type: integer, primary: true, autoincrement: true }
+    name:         { type: string(100), notnull: true, unique: true }
+    description:  { type: string(1000) }
+
+Article:
+  tableName: article
+  columns:
+    article_id: { type: integer, primary: true, autoincrement: true }
+    title:      { type: string(255), notnull: true, unique: true }
+    abstract:   { type: string(2000) }
+    content:    { type: blob }
+    author_id:  { type: integer, notnull: true }
+    published:  { type: timestamp }
+    dynjs:      { type: string(1000) }
+    dyncss:     { type: string(1000) }
+    # deprecated - google used analytics instead
+    # hit:        { type: integer, notnull: true, default: 0 }
+    # replaced by Timestampable
+    # created: { type: timestamp, notnull: true }
+    # replaced by Sluggable
+    # article_sulg: { type: string(255), notnull: true }
+  actAs:
+    Sluggable:  { name: article_slug, unique: true, fields: [title], canUpdate: true }
+    Timestampable:
+      created:  { name: created, type: timestamp }
+      updated:  { disable: true }
+    Searchable: { fields: [title, abstract] }
+  relations:
+    # one Author -> many Articles
+    Author: { foreignAlias: Articles, local: author_id, foreign: author_id }
+
+Comment:
+  tableName: comment
+  columns:
+    comment_id: { type: integer, primary: true, autoincrement: true }
+    author:     { type: string(30), notnull: true }
+    date:       { type: timestamp }
+    content:    { type: string(1000) }
+    web:        { type: string(255) }
+    mail:       { type: string(255) }
+    article_id: { type: integer, notnull: true }
+  actAs:
+    Timestampable:
+        created: { name: date, type: timestamp }
+        updated: { disable: true }
+  relations:
+    # one Article -> many Comments
+    Article:  { onDelete: CASCADE, foreignAlias: Comments, local: article_id, foreign: article_id }
+
+Category:
+  tableName: category
+  columns:
+    category_id:  { type: integer, primary: true, autoincrement: true }
+    name:         { type: string(100), unique: true, notnull: true }
+    description:  { type: string(2000) }
+    # replaced by Sluggable
+    # category_sulg: { type: string(100), notnull: true }
+  actAs:
+    Sluggable:    { name: category_slug, unique: true, fields: [name], canUpdate: true }
+
+CategoryArticle:
+  tableName: category_article
+  columns:
+    category_id:  { type: integer, primary: true }
+    article_id:   { type: integer, primary: true }
+  relations:
+    # one Article -> many ArticleCategories
+    Article:  { onDelete: CASCADE, foreignAlias: ArticleCategories, local: article_id, foreign: article_id }
+    # one Category -> many CategoryArticles
+    Category: { onDelete: CASCADE, foreignAlias: CategoryArticles, local: category_id, foreign: category_id }

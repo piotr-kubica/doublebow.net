@@ -1,0 +1,32 @@
+.example table {
+    font-family: Verdana;
+    font-size: 12px;
+    cursor: default;
+    width: 280px;
+    border-collapse: collapse;
+}
+.example table.demo {
+    margin-bottom: 10px;
+}
+.example table.demo td {
+    padding-left: 8px;
+    padding-right: 8px;
+    border: 1px solid;
+}
+.example input[type="button"] {
+    margin-top: 5px;
+}
+caption {
+    text-align: left;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+.numeric {
+    text-align: right;
+}
+.lbl {
+    width: 110px;
+}
+.selected {
+    background-color: lightsalmon;
+}

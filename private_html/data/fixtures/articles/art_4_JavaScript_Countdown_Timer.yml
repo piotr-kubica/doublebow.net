@@ -1,0 +1,125 @@
+Article:
+  art4:
+    article_id: 4
+    title: JavaScript Countdown Timer
+    abstract: |
+      Sometimes when an interesting event is comming up you wish to have a
+      countdown timer on your wesite. With
+      <a href="http://en.wikipedia.org/wiki/JavaScript">JavaScript</a>
+      you can write it yourself.
+    content: |
+      <h3>Functioning</h3>
+      <p>
+        A countdown timer takes the date and time of the upcoming
+        event substracts the current date and time from it and gives you the
+        information in how many days/hours/seconds is going the event to occur.
+      </p>
+      <h3>Let's write some code</h3>
+      <p>
+        So first we will need a varialble that holds the current date. We name it
+        <i>today</i>. We also need the target date (variable named <i>target</i>)
+        by passing the events date as a string in a
+        <a href="http://blog.stevenlevithan.com/archives/date-time-format">specific format</a>
+        or by using an overloaded version of the
+        <a href="http://www.w3schools.com/js/js_obj_date.asp">Date</a> constructor.
+      </p>
+      <div class="code_snippet"><pre class="brush: js; first-line: 5;">
+        var today = new Date();
+        var target = new Date("28 July, 2012 19:00:00");
+      </pre></div>
+      <p>
+        The countdown timer we're creating should be accurate to seconds.
+        Therefore we need the time. Actually both times - current and target.
+        The <i>getTime</i> method returns the miliseconds elapsed since 01.01.1970.
+      </p>
+      <div class="code_snippet"><pre class="brush: js; first-line: 7;">
+        var todayTime = today.getTime();
+        var targetTime = target.getTime();
+      </pre></div>
+      <p>
+        Now that we have accurate current and target times we can substract
+        one from another and save the result in variable <i>diff</i>.
+      </p>
+      <div class="code_snippet"><pre class="brush: js; first-line: 9;">
+        var diff = targetTime - todayTime;
+      </pre></div>
+      <p>
+        Now we can calculate the remaining days/hours/seconds to the event starts.
+        But before that we have to convert the time in milisecods stored in <i>diff</i>
+        to corresponding time units.
+        So first we obtain seconds by dividing <i>diff</i> by <i>1000</i>.
+        Then we obtain mintes, this time dividing by 60 * 1000 miliseconds,
+        because a minute has 60 seconds.
+        We do the same with hours and days respectively.
+        Because the division operations can have a remainder we have to
+        "round" it up leaving the reminder that will be stored in more accurate
+        variables (eg. minutes reminder is stored in seconds) so there is no need
+        to worry.
+      </p>
+      <div class="code_snippet"><pre class="brush: js; first-line: 10;">
+        var sec = Math.floor(diff / 1000);
+        var min = Math.floor(diff / 60000);
+        var h = Math.floor(diff / 3600000);
+        var days = Math.floor(diff / 86400000);
+      </pre></div>
+      <p>
+        Now we know how many seconds, minutes, etc. are left to the event.
+        Each telling us the same thing in other time units.
+        But we want the units to be stored on an apropriate level of
+        accuracy. We want to konw how many days, then hours in that day, then minutes
+        in that hour etc. are left to the event.
+        So we simply substract from the variable holding the more accurate time unit
+        the less accurate time unit (representing the same time) to get the remainder
+        in the more accurate unit. Confusing? Just take a look at the code below.
+      </p>
+      <div class="code_snippet"><pre class="brush: js; first-line: 15;">
+        var hoursLeft = h - days * 24;
+        var minsLeft = min - h * 60;
+        var secsLeft = sec - min * 60;
+      </pre></div>
+      <p>
+        Now it's time to insert the calculated values on our site. We select
+        a <a href="http://www.w3schools.com/htmldom/dom_nodes_info.asp">DOM node</a>
+        by its ID and insert the value inside by passing the ID to the
+        <i>getElementById</i> method invoked on <i>document</i>.
+      </p>
+      <div class="code_snippet"><pre class="brush: js; first-line: 18;">
+        document.getElementById("ct_sec").innerHTML  = "" + secsLeft;
+        document.getElementById("ct_min").innerHTML  = "" + minsLeft;
+        document.getElementById("ct_h").innerHTML    = "" + hoursLeft;
+        document.getElementById("ct_days").innerHTML = "" + days;
+      </pre></div>
+      <h4>Make it work</h4>
+      <p>
+        Now we have to put it in an function for example <i>calculateCountdown</i>
+      </p>
+      <div class="code_snippet"><pre class="brush: js; first-line: 2;">
+        function calculateCountdown() {
+          // code goes here
+        }
+      </pre></div>
+      <p>
+        What we have now is a coutdown timer that doesn't update itself.
+        What now?! Don't panic.
+        All we have to do is to run this function at least once a second to keep it
+        up to date.
+        We can simply achieve this by passing our function name as string to <i>setInterval</i>
+        function that will call our <i>calculateCountdown</i> the amount of miliseconds
+        we specify.
+      </p>
+      <div class="code_snippet"><pre class="brush: js; first-line: 1;">
+        setInterval("calculateCountdown()", 500);
+      </pre></div>
+      <p>
+        <a href="/uploads/assets/a003/countdown_timer_plain.txt" target="_blank">Click here</a> to view the whole script. <br/>
+        <a href="/uploads/assets/a003/countdown_timer.zip">Click here</a> to download countdown timer demo.
+      </p>
+    dynjs: '/js/shBrushJScript'
+#    dyncss: ''
+    author_id: 1
+    published: '2011-03-26 12:00:00'
+
+CategoryArticle:
+  ca_4_2:
+    article_id: 4
+    category_id: 2
