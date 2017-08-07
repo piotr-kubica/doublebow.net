@@ -6,6 +6,6 @@ return array(
 'doctrine' => new sfDoctrineDatabase(array (
   'dsn' => 'mysql:host=localhost;dbname=d2bow_prod',
   'username' => 'd2bow_client',
-  'password' => '***REMOVED***',
+  'password' => '1234',
   'name' => 'doctrine',
 )),);
